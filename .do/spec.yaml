@@ -60,10 +60,6 @@ workers:
     run_command: php artisan horizon
     <<: [*repo, *envs]
   - name: scheduler
-    github:
-      repo: kamaln7/app-platform-microblog
-      branch: main
-      deploy_on_push: true
     run_command: |
       while true; do
         echo "=> Running scheduler"
