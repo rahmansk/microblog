@@ -19,8 +19,7 @@
         "league/flysystem-cached-adapter": "~1.0",
         "ext-redis": "*",
         "ext-pcntl": "*",
-        "ext-bcmath": "*",
-        "ext-mcrypt": "*"
+        "ext-bcmath": "*"
     },
     "require-dev": {
         "facade/ignition": "^2.0",
