@@ -1,16 +1,35 @@
-@extends('layouts.static')
+@extends('layouts.app')
+
+@section('title', 'Home')
+
+@section('header')
+<h1 class="mb4">Posts</h1>
+@endsection
 
 @section('content')
 
-<section class="flex-ns vh-100 items-center justify-center">
-  <div class="mw6 ph5">
-    <img src="/typewriter.svg" style="width: 25rem">
-  </div>
-  <div class="tc tl-ns ph3">
-    <h1 class="f3 f1-l fw2 mb3 mt4 mt0-ns">Microblog.</h1>
-    <h2 class="f5 f3-l fw1 mb4 mb5-l lh-title">A brand new microblogging platform. Coming soon.</h2>
-  </div>
-</section>
+<div class="mb3">
+    <a class="link f5 black dim b" href="{{ route('posts.create') }}">✍️ Write a Post</a>
+</div>
 
+<div>
+@forelse($posts as $post)
+<div class="ph3 pv4 striped--near-white flex">
+    <div class="flex-grow-1 mr2">
+        <header class="mb2"><span class="b pr2">{{ $post->author }}</span> {{ $post->created_at->diffForHumans() }}</header>
+        <div class="pl2">
+            <p class="mb2">{{ $post->body }}</p>
+        </div>
+    </div>
+    <div class="flex-shrink-0">
+        @if($post->photo)
+            <img src="{{ Storage::url($post->photoFilename()) }}" style="width: 96px" class="br-100 pa1 ba b--black-10">
+        @endif
+    </div>
+</div>
+@empty
+<p>There are no posts on this microblog yet :(</p>
+@endforelse
+</div>
 
 @endsection
