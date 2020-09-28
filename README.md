@@ -1,3 +1,3 @@
-# laravel-k8s-microblog
+# Microblog
 
-Work in progress! 🎡
+Laravel Microblog demo for DigitalOcean App Platform 🎡
