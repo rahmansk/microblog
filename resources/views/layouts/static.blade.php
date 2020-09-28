@@ -7,7 +7,7 @@
         <title>Microblog</title>
         <link rel="stylesheet" href="{{ mix('/css/app.css') }}"/>
     </head>
-    <body>
+    <body class="sans-serif">
     	@yield('content')
     </body>
 </html>
