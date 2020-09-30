@@ -1,6 +1,6 @@
 <nav class="flex justify-between items-center mb4">
     <h1 class="f4 fw4">
-        <a class="link black" href="{{ route('home') }}">Micro-blog</a>
+        <a class="link black" href="{{ route('home') }}">Microblog</a>
     </h1>
     <div>
         <a class="link dim dark-gray f5 dib mr3" href="{{ route('home') }}">Posts</a>
